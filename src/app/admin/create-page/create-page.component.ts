@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {FormGroup, Validators} from '@angular/forms';
+import {FormControl, FormGroup, Validators} from '@angular/forms';
 import {Post} from '../../shared/interfaces';
 
 @Component({
@@ -14,10 +14,11 @@ export class CreatePageComponent implements OnInit {
 
   ngOnInit() {
     this.form = new FormGroup({
-      title: new FormGroup(null, Validators.required),
-      text: new FormGroup(null, Validators.required),
-      author: new FormGroup(null, Validators.required)
+      title: new FormControl(null, Validators.required),
+      text: new FormControl(null, Validators.required),
+      author: new FormControl(null, Validators.required)
     });
+
   }
 
 
@@ -32,6 +33,8 @@ export class CreatePageComponent implements OnInit {
       text: this.form.value.text,
       date: new Date()
     };
+
+    console.log(post);
   }
 
 }
