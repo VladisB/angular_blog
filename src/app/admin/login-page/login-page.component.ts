@@ -26,6 +26,9 @@ export class LoginPageComponent implements OnInit {
       if (params.loginAgain) {
         this.message = 'Please, log in again';
       }
+      if (params.authFailed) {
+        this.message = 'Time is gone. Please, log in again';
+      }
     });
 
     this.form = new FormGroup({
