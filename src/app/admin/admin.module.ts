@@ -10,6 +10,7 @@ import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {AuthService} from './shared/services/auth.service';
 import {SharedModule} from '../shared/shared.module.';
 import {AuthGuard} from './shared/services/auth.guard';
+import {SearchPipe} from './shared/search.pipe';
 
 @NgModule({
   imports: [
@@ -29,7 +30,7 @@ import {AuthGuard} from './shared/services/auth.guard';
   ],
   exports: [RouterModule],
   providers: [AuthGuard],
-  declarations: [AdminLayoutComponent, LoginPageComponent, DashboardPageComponent, CreatePageComponent, EditPageComponent]
+  declarations: [AdminLayoutComponent, LoginPageComponent, DashboardPageComponent, CreatePageComponent, EditPageComponent, SearchPipe]
 })
 export class AdminModule {
 
